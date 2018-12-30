@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mGreetingTextView;
     private Button mPlayButton;
     private EditText mNameInput;
-
+    private User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mGreetingTextView = findViewById(R.id.activity_main_greeting_txt);
         mPlayButton = findViewById(R.id.activity_main_play_btn);
         mNameInput = findViewById(R.id.activity_main_name_input);
+        mUser = new User();
 
         //Disabled until user types at least a letter in the input
         mPlayButton.setEnabled(false);
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String firstname = mNameInput.getText().toString();
+                mUser.setFirstName(firstname);
 
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(gameActivityIntent);
