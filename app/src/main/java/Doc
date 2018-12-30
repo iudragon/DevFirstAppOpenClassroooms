@@ -1,0 +1,10 @@
+1. Respond to User Action :
+
+Managing Actions:
+
+The two key actions we need to implement are as follows:
+
+1. Verify that the user entered their first name
+
+2. Detect when the user presses the Play button
+
